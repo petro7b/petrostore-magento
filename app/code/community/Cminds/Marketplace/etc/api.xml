@@ -1,0 +1,35 @@
+<config>
+	<api>
+		<resources>
+			<cm_marketplace translate="title" module="marketplace">
+				<title>CM Marketplace API calls</title>
+				<model>marketplace/core_api</model>
+				<acl>marketplace/api</acl>
+				<methods>
+					<getSupplier translate="title" module="marketplace">
+						<title>Get Supplier By Id</title>
+					</getSupplier>
+					<getProductsBySupplierId translate="title" module="marketplace">
+						<title>Get Products Supplier By Id</title>
+					</getProductsBySupplierId>
+				</methods>
+			</cm_marketplace>
+		</resources>
+		<resources_alias>
+			<dashboard>marketplace_dashboard</dashboard>
+			<core>marketplace_core</core>
+		</resources_alias>
+		<acl>
+			<resources>
+				<marketplace translate="title" module="marketplace">
+					<title>CM Marketplace</title>
+					<sort_order>100</sort_order>
+					<api translate="title" module="marketplace">
+						<title>Marketplace Connector APIs</title>
+						<sort_order>100</sort_order>
+					</api>
+				</marketplace>
+			</resources>
+		</acl>
+	</api>
+</config>

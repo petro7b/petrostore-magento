@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <delivery_date_configuration>
+            <label>Delivery Date</label>
+            <tab>marketplace</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>40</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <groups>
+                <general translate="label" module="marketplace_delivery_date">
+                    <label>General</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <set_delivery_date translate="label" module="marketplace_delivery_date">
+                            <label>Allow to set delivery date</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </set_delivery_date>
+                        <order_lead_time translate="label" module="marketplace_delivery_date">
+                            <label>Allow to set Order lead time</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_lead_time>
+                        <cron_notifications translate="label" module="marketplace_delivery_date">
+                            <label>Notify customer about next day deliveries</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </cron_notifications>
+                    </fields>
+                </general>
+            </groups>
+        </delivery_date_configuration>
+    </sections>
+</config>

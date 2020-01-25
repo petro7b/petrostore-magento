@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <marketplace translate="label" module="marketplaceproductquestions">
+            <label>Marketplace</label>
+            <sort_order>100</sort_order>
+        </marketplace>
+    </tabs>
+    <sections>
+        <marketplace_productquestions translate="label" module="marketplaceproductquestions">
+            <label>Product Questions</label>
+            <tab>marketplace</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>40</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="marketplaceproductquestions">
+                    <label>General</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <module_enabled translate="label" module="marketplaceproductquestions">
+                            <label>Module enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </module_enabled>
+                        <module_enabled_on_frontend translate="label" module="marketplaceproductquestions">
+                            <label>Presented on frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </module_enabled_on_frontend>
+                        <admin_approval_required translate="label" module="marketplaceproductquestions">
+                            <label>Admin Approval Required</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><module_enabled_on_frontend>1</module_enabled_on_frontend></depends>
+                        </admin_approval_required>
+                        <show_popup_form> translate="label">
+                            <label>Show Question Form in Popup</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </show_popup_form>
+                        <default_max_questions translate="label">
+                            <label>Max questions per product</label>
+                            <comment>
+                                <![CDATA[Set "0" for unlimited]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </default_max_questions>
+                    </fields>
+                </general>
+                <recaptcha_settings translate="label" module="marketplaceproductquestions">
+                    <label>Recaptcha Settings</label>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <recaptcha_enabled translate="label" module="marketplaceproductquestions">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </recaptcha_enabled>
+                        <recaptcha_site_key translate="label" module="marketplaceproductquestions">
+                            <label>Recaptcha Site Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><recaptcha_enabled>1</recaptcha_enabled></depends>
+                        </recaptcha_site_key>
+                        <recaptcha_secret_key translate="label" module="marketplaceproductquestions">
+                            <label>Recaptcha Secret Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><recaptcha_enabled>1</recaptcha_enabled></depends>
+                        </recaptcha_secret_key>
+                    </fields>
+                </recaptcha_settings>
+                <productquestions_notifications_email translate="label" module="marketplaceproductquestions">
+                    <label>Email Notifications</label>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <notify_on_question_sent translate="label" module="marketplaceproductquestions">
+                            <label>Notify customer when question was sent</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </notify_on_question_sent>
+                        <email_title_on_question_sent translate="label" module="marketplaceproductquestions">
+                            <label>Email title when question was sent</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_on_question_sent>1</notify_on_question_sent></depends>
+                        </email_title_on_question_sent>
+                        <email_text_on_question_sent translate="label" module="marketplaceproductquestions">
+                            <label>Email text on question send</label>
+                            <comment>
+                                <![CDATA[Shortcodes: {{customer_name}}, {{productName}}, {{productLink}}, {{questionBody}}]]>
+                            </comment>
+                            <sort_order>30</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_on_question_sent>1</notify_on_question_sent></depends>
+                        </email_text_on_question_sent>
+                        <notify_on_answer_placed translate="label" module="marketplaceproductquestions">
+                            <label>Notify customer when answer was placed</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </notify_on_answer_placed>
+                        <email_title_on_answer_placed translate="label" module="marketplaceproductquestions">
+                            <label>Email title when answer was placed</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_on_answer_placed>1</notify_on_answer_placed></depends>
+                        </email_title_on_answer_placed>
+                        <email_text_on_answer_placed translate="label" module="marketplaceproductquestions">
+                            <label>Email text when answer was placed</label>
+                            <comment>
+                                <![CDATA[Shortcodes: {{customer_name}}, {{productName}}, {{productLink}}, {{questionBody}}, {{answerBody}}]]>
+                            </comment>
+                            <sort_order>60</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_on_answer_placed>1</notify_on_answer_placed></depends>
+                        </email_text_on_answer_placed>
+                        <notify_admin_on_question_sent translate="label" module="marketplaceproductquestions">
+                            <label>Notify Admin when question was sent</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </notify_admin_on_question_sent>
+                        <email_title_to_admin_on_question_sent translate="label" module="marketplaceproductquestions">
+                            <label>Email title to Admin when question was sent</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_admin_on_question_sent>1</notify_admin_on_question_sent></depends>
+                        </email_title_to_admin_on_question_sent>
+                        <email_text_to_admin_on_question_sent translate="label" module="marketplaceproductquestions">
+                            <label>Email text to Admin on question send</label>
+                            <comment>
+                                <![CDATA[Shortcodes: {{customer_name}}, {{productName}}, {{productLink}}, {{questionBody}}, {{questionId}}]]>
+                            </comment>
+                            <sort_order>90</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_admin_on_question_sent>1</notify_admin_on_question_sent></depends>
+                        </email_text_to_admin_on_question_sent>
+                        <notify_supplier translate="label" module="marketplaceproductquestions">
+                            <label>Notify Supplier when his product get Question</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </notify_supplier>
+                        <email_title_to_notify_supplier translate="label" module="marketplaceproductquestions">
+                            <label>Email title to Supplier when his product get Question</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_supplier>1</notify_supplier></depends>
+                        </email_title_to_notify_supplier>
+                        <email_text_to_notify_supplier translate="label" module="marketplaceproductquestions">
+                            <label>Email text to Supplier when his product get Question</label>
+                            <comment>
+                                <![CDATA[Shortcodes: {{customer_name}}, {{productName}}, {{productLink}}, {{questionBody}}, {{questionId}}]]>
+                            </comment>
+                            <sort_order>120</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <depends><notify_supplier>1</notify_supplier></depends>
+                        </email_text_to_notify_supplier>
+                    </fields>
+                </productquestions_notifications_email>
+            </groups>
+        </marketplace_productquestions>
+    </sections>
+</config>

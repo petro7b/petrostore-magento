@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <suppliers>
+            <children>
+                <custom_fields translate="title" module="marketplace">
+                    <title>Manage Profile Fields</title>
+                    <action>adminhtml/suppliers/fields</action>
+                    <sort_order>20</sort_order>
+                </custom_fields>
+            </children>
+            <children>
+                <billing_grid translate="title" module="marketplace">
+                    <title>Billing Report</title>
+                    <action>adminhtml/billing</action>
+                    <sort_order>30</sort_order>
+                </billing_grid>
+            </children>
+        </suppliers>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <marketplace_configuration translate="title" module="marketplace">
+                                        <title>Marketplace Multi Vendor Extension - General Settings</title>
+                                    </marketplace_configuration>
+                                    <marketplace_shipping_labels translate="title" module="marketplace">
+                                        <title>Marketplace Multi Vendor Extension - Shipping Labels</title>
+                                    </marketplace_shipping_labels>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <suppliers>
+                        <title>Marketplace Multi Vendor Extension - Supplier Section</title>
+                        <children>
+                            <custom_fields translate="title" module="marketplace">
+                                <title>Marketplace Multi Vendor Extension - Supplier Custom Fields Grid</title>
+                                <sort_order>20</sort_order>
+                            </custom_fields>
+                            <billing_grid translate="title" module="marketplace">
+                                <title>Marketplace Multi Vendor Extension - Billing Grid</title>
+                                <sort_order>30</sort_order>
+                            </billing_grid>
+                        </children>
+                    </suppliers>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
