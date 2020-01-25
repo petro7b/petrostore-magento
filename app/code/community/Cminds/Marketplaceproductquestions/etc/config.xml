@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Cminds_Marketplaceproductquestions>
+            <version>1.0.2</version>
+        </Cminds_Marketplaceproductquestions>
+    </modules>
+    <global>
+        <blocks>
+            <marketplaceproductquestions>
+                <class>Cminds_Marketplaceproductquestions_Block</class>
+            </marketplaceproductquestions>
+        </blocks>
+        <helpers>
+            <marketplaceproductquestions>
+                <class>Cminds_Marketplaceproductquestions_Helper</class>
+            </marketplaceproductquestions>
+        </helpers>
+        <models>
+            <marketplaceproductquestions>
+                <class>Cminds_Marketplaceproductquestions_Model</class>
+                <resourceModel>marketplaceproductquestions_mysql4</resourceModel>
+            </marketplaceproductquestions>
+            <marketplaceproductquestions_mysql4>
+                <class>Cminds_Marketplaceproductquestions_Model_Mysql4</class>
+                <entities>
+                    <questions>
+                        <table>marketplace_productquestions_questions</table>
+                    </questions>
+                    <answers>
+                        <table>marketplace_productquestions_answers</table>
+                    </answers>
+                </entities>
+            </marketplaceproductquestions_mysql4>
+        </models>
+        <resources>
+            <cminds_marketplaceproductquestions>
+                <setup>
+                    <module>Cminds_Marketplaceproductquestions</module>
+                    <class>Cminds_Marketplaceproductquestions_Model_Mysql4_Setup</class>
+                </setup>
+            </cminds_marketplaceproductquestions>
+        </resources>
+
+        <template>
+            <email>
+                <marketplaceproductquestions_email_question_sent>
+                    <label>Product Questions email to Customer</label>
+                    <file>cminds_marketplaceproductquestions_email.html</file>
+                    <type>html</type>
+                </marketplaceproductquestions_email_question_sent>
+            </email>
+        </template>
+    <events>
+        <supplierfrontendproductuploader_nav_load>
+            <observers>
+                <marketplace_qustionsaddon_nav_load>
+                    <type>singleton</type>
+                    <class>Cminds_Marketplaceproductquestions_Model_Observer</class>
+                    <method>navLoad</method>
+                </marketplace_qustionsaddon_nav_load>
+            </observers>
+        </supplierfrontendproductuploader_nav_load>
+    </events>
+
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <cminds_marketplaceproductquestions before="Mage_Adminhtml">Cminds_Marketplaceproductquestions_Adminhtml</cminds_marketplaceproductquestions>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <frontend>
+        <translate>
+            <modules>
+                <cminds_marketplaceproductquestions>
+                    <files>
+                        <default>Cminds_Marketplaceproductquestions.csv</default>
+                    </files>
+                </cminds_marketplaceproductquestions>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <cminds_marketplaceproductquestions>
+                    <file>cminds_marketplaceproductquestions.xml</file>
+                </cminds_marketplaceproductquestions>
+            </updates>
+        </layout>
+
+        <routers>
+            <cminds_supplierfrontendproductuploader>
+                <args>
+                    <modules>
+                        <cminds_marketplaceproductquestions before="Cminds_Supplierfrontendproductuploader">Cminds_Marketplaceproductquestions</cminds_marketplaceproductquestions>
+                    </modules>
+                </args>
+            </cminds_supplierfrontendproductuploader>
+            <cminds_marketplace>
+                <args>
+                    <modules>
+                        <cminds_marketplaceproductquestions before="Cminds_Marketplace">Cminds_Marketplaceproductquestions</cminds_marketplaceproductquestions>
+                    </modules>
+                </args>
+            </cminds_marketplace>
+        </routers>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <cminds_marketplaceproductquestions>
+                    <files>
+                        <default>Cminds_Marketplaceproductquestions.csv</default>
+                    </files>
+                </cminds_marketplaceproductquestions>
+            </modules>
+        </translate>
+    </adminhtml>
+</config>

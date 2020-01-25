@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <cminds_marketplaceproductquestions translate="title" module="marketplaceproductquestions">
+                    <sort_order>10</sort_order>
+                    <title>Product Questions</title>
+                    <action>adminhtml/quest</action>
+                </cminds_marketplaceproductquestions>
+            </children>
+        </catalog>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <marketplace_productquestions translate="title" module="marketplaceproductquestions">
+                                        <title>Marketplace Product Questions Addon</title>
+                                        <sort_order>50</sort_order>
+                                    </marketplace_productquestions>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
